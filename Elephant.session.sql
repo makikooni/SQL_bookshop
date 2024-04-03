@@ -27,3 +27,32 @@ SELECT *
 FROM books
 WHERE is_fiction IS FALSE;
 
+UPDATE books
+SET quantity_in_stock = 0
+WHERE book_id = 4;
+
+DELETE FROM BOOKS
+WHERE quantity_in_stock = 0;
+
+
+CREATE TABLE authors(
+  author_id INT PRIMARY KEY,
+  author_name VARCHAR(200),
+  fun_fact VARCHAR(100)
+);
+
+
+INSERT INTO authors (author_id, author_name, fun_fact)
+VALUES
+    (1, 'Douglas Adams', 'Scriptwriter and radio dramatist.'),
+    (2, 'Jane Austen', 'Explored women''s dependence on marriage.'),
+    (3, 'J.R.R. Tolkien', 'Created languages for his worlds.'),
+    (4, 'Harper Lee', 'Won Pulitzer Prize for "To Kill a Mockingbird."'),
+    (5, 'Gabriel Garcia Marquez', 'Nobel Prize in Literature winner.'),
+    (6, 'Mary Shelley', 'Wrote "Frankenstein" at age 18.'),
+    (7, 'Frank Herbert', 'Wrote "Dune," a classic sci-fi novel.'),
+    (8, 'Margaret Atwood', 'Known for dystopian novels.'),
+    (9, 'F. Scott Fitzgerald', 'Coined the term "Jazz Age."'),
+    (10, 'Herman Melville', 'Drew on sailor experience for "Moby Dick."');
+
+
