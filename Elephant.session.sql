@@ -6,6 +6,7 @@ CREATE TABLE books (
     title VARCHAR(80) NOT NULL,
     price_in_pence INT NOT NULL,
     quantity_in_stock INT DEFAULT 0 NOT NULL,
+    -- since you put default 0, you can skip NOT NULL.. i think 
     release_date DATE,
     is_fiction BOOLEAN
     );
@@ -76,14 +77,17 @@ VALUES
 
 ALTER TABLE books
 ADD COLUMN author_id INT;
+-- consider adding reference and on cascade delate - will send resources later 
 
 ALTER TABLE books
 ADD COLUMN author_name VARCHAR (200);
+-- same 
 
 UPDATE books
 SET author_id = 3
 WHERE book_id = 1;
 
+-- gotta run to check if it works cause i did it differently
 UPDATE books
 SET author_id = 
     CASE 
